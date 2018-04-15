@@ -25,7 +25,7 @@ $('.message a').click(function(){
 
 
 var general;
-
+var datof="";
 
 
 unavesmensaje();
@@ -34,11 +34,11 @@ unavesmensaje();
 //subirdatos("user","cedula","33311111111");
 
 unavesmensaje2("awebreg");
+var urlloginok;
+traerdatosfirebase("awebloginok");
 
-var urlloginok=unavesmensaje2("awebloginok");
 
-
-
+var datof="";
 
 function login(){
 
@@ -59,7 +59,7 @@ console.log(general);
 for (var indice in general) {
 	if(general[indice].cedula==cedulad &&  general[indice].whatsapp==celulard){
      
-alert("encontrado");
+//alert("encontrado " + urlloginok);
 
 //window.location.assign("https://www.w3schools.com")
 
@@ -169,7 +169,7 @@ alert("encontrado");
 
 
 
-function unavesmensaje2(id)
+function traerdatosfirebase(id)
 {
 
 //var c=String(cedu);
@@ -180,6 +180,9 @@ function unavesmensaje2(id)
     // ...
     //alert(  snapshot.val());
     mi=snapshot.val();
+   datof=mi;
+
+   urlloginok=mi;
    // alert(cedu+"  ced celu"+celu);
 //var s=mi;// firebase.database().ref().child("user");
 //urlregistrar=mi;
@@ -193,9 +196,12 @@ alert("encontrado");
   console.log("ind'" + indice + "'= " + s[indice]);
 }
 */
- 
+   //alert(" datof "+datof);
+
    // document.getElementById("idcumplimiento").innerHTML = snapshot.val();
   });
 
-return mi;
+  // alert(" datof "+datof);
+ return datof;
 }
+
