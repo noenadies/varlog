@@ -35,6 +35,11 @@ unavesmensaje();
 
 unavesmensaje2("awebreg");
 
+var urlloginok=unavesmensaje2("awebloginok");
+
+
+
+
 function login(){
 
 
@@ -58,7 +63,7 @@ alert("encontrado");
 
 //window.location.assign("https://www.w3schools.com")
 
-window.location ="https://noenadies.github.io/titanic/";
+window.location =urlloginok;
 //location.href = "http://www.webquequeremosver.com"; 
 noencontrado=false;
 	}
@@ -158,4 +163,39 @@ alert("encontrado");
   });
 
 
+}
+
+
+
+
+
+function unavesmensaje2(id)
+{
+
+//var c=String(cedu);
+//var cl= String(celu);
+
+  firebase.database().ref().child(String(id)).once('value').then(function(snapshot) {
+    var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+    // ...
+    //alert(  snapshot.val());
+    mi=snapshot.val();
+   // alert(cedu+"  ced celu"+celu);
+//var s=mi;// firebase.database().ref().child("user");
+//urlregistrar=mi;
+//general=s;
+
+/*for (var indice in s) {
+	if(s[indice].cedula==c &&  s[indice].whatsapp==cl){
+
+alert("encontrado");
+	}
+  console.log("ind'" + indice + "'= " + s[indice]);
+}
+*/
+ 
+   // document.getElementById("idcumplimiento").innerHTML = snapshot.val();
+  });
+
+return mi;
 }
