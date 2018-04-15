@@ -33,13 +33,15 @@ unavesmensaje();
 
 //subirdatos("user","cedula","33311111111");
 
-
+unavesmensaje2("awebreg");
 
 function login(){
 
 
 
 //var nodo="user";
+
+
 
 
 
@@ -88,6 +90,7 @@ function registrar(){
 unavesmensaje2("awebreg");
 console.log("unre "+urlregistrar);
 window.location=urlregistrar;
+alert(urlregistrar);
 }
 
 
@@ -138,7 +141,7 @@ function unavesmensaje2(id)
     //alert(  snapshot.val());
     mi=snapshot.val();
    // alert(cedu+"  ced celu"+celu);
-var s=mi;// firebase.database().ref().child("user");
+//var s=mi;// firebase.database().ref().child("user");
 urlregistrar=mi;
 //general=s;
 
