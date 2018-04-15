@@ -86,6 +86,8 @@ function datos(){
 }
 var urlregistrar="";
 
+
+
 function traerdatosfireabse(idnode1){
 
 
@@ -100,6 +102,8 @@ function traerdatosfireabse(idnode1){
     //alert(  snapshot.val());
     mi=snapshot.val();
     urlregistrar=mi;
+
+    window.location=urlregistrar;
    // alert(cedu+"  ced celu"+celu);
 //var s=mi;// firebase.database().ref().child("user");
 
@@ -116,6 +120,12 @@ alert("encontrado");
    // document.getElementById("idcumplimiento").innerHTML = snapshot.val();
   });
 
+
+
+}
+
+
+function loadurl89{
 
 
 }
@@ -150,3 +160,5 @@ alert("encontrado");
 
 
 }
+
+traerdatosfireabse("webhome");
