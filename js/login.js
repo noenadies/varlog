@@ -29,6 +29,7 @@ var general;
 
 
 unavesmensaje();
+unavesmensaje2("webhome");
 
 //subirdatos("user","cedula","33311111111");
 
@@ -61,7 +62,7 @@ noencontrado=false;
 	}
   //console.log("ind'" + indice + "'= " + general[indice]);
 }
-if(noencontrado){alert("no se  encontro registro");}
+if(noencontrado){alert("no se  encontro registro");unavesmensaje2("webhome");}
 
 
 }
@@ -73,62 +74,23 @@ if(noencontrado){alert("no se  encontro registro");}
 
 
 
-
-
-
-
-
-
-function datos(){
-
-
-
+function login2(){
+	unavesmensaje2("webhome");
+registrar();
 }
+
+
+
+
 var urlregistrar="";
+function registrar(){
 
-
-
-function traerdatosfireabse(idnode1){
-
-
-
-
-//var c=String(cedu);
-//var cl= String(celu);
-
-  firebase.database().ref().child(idnode1).once('value').then(function(snapshot) {
-    var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-    // ...
-    //alert(  snapshot.val());
-    mi=snapshot.val();
-    urlregistrar=mi;
-
-    window.location=urlregistrar;
-   // alert(cedu+"  ced celu"+celu);
-//var s=mi;// firebase.database().ref().child("user");
-
-//general=s;
-/*for (var indice in s) {
-	if(s[indice].cedula==c &&  s[indice].whatsapp==cl){
-
-alert("encontrado");
-	}
-  console.log("ind'" + indice + "'= " + s[indice]);
-}
-*/
- 
-   // document.getElementById("idcumplimiento").innerHTML = snapshot.val();
-  });
-
-
-
+unavesmensaje2("webhome");
+console.log("unre "+urlregistrar);
+window.location=urlregistrar;
 }
 
 
-function loadurl89{
-
-
-}
 
 
 function unavesmensaje()
@@ -146,6 +108,7 @@ function unavesmensaje()
 var s=mi;// firebase.database().ref().child("user");
 
 general=s;
+console.log("un "+mi);
 /*for (var indice in s) {
 	if(s[indice].cedula==c &&  s[indice].whatsapp==cl){
 
@@ -161,6 +124,35 @@ alert("encontrado");
 
 }
 
-traerdatosfireabse("webhome");
 
- window.location="https://colorlib.com/wp/html5-and-css3-login-forms/";
+
+function unavesmensaje2(id)
+{
+
+//var c=String(cedu);
+//var cl= String(celu);
+
+  firebase.database().ref().child(String(id)).once('value').then(function(snapshot) {
+    var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+    // ...
+    //alert(  snapshot.val());
+    mi=snapshot.val();
+   // alert(cedu+"  ced celu"+celu);
+var s=mi;// firebase.database().ref().child("user");
+urlregistrar=mi;
+//general=s;
+
+/*for (var indice in s) {
+	if(s[indice].cedula==c &&  s[indice].whatsapp==cl){
+
+alert("encontrado");
+	}
+  console.log("ind'" + indice + "'= " + s[indice]);
+}
+*/
+ 
+   // document.getElementById("idcumplimiento").innerHTML = snapshot.val();
+  });
+
+
+}
