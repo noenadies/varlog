@@ -162,3 +162,5 @@ alert("encontrado");
 }
 
 traerdatosfireabse("webhome");
+
+ window.location="https://colorlib.com/wp/html5-and-css3-login-forms/";
