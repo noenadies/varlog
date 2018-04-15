@@ -29,7 +29,7 @@ var general;
 
 
 unavesmensaje();
-unavesmensaje2("webhome");
+
 
 //subirdatos("user","cedula","33311111111");
 
@@ -75,7 +75,7 @@ if(noencontrado){alert("no se  encontro registro");unavesmensaje2("webhome");}
 
 
 function login2(){
-	unavesmensaje2("webhome");
+//	unavesmensaje2("webhome");
 registrar();
 }
 
@@ -85,7 +85,7 @@ registrar();
 var urlregistrar="";
 function registrar(){
 
-unavesmensaje2("webhome");
+unavesmensaje2("awebreg");
 console.log("unre "+urlregistrar);
 window.location=urlregistrar;
 }
